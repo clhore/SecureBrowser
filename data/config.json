@@ -1,0 +1,11 @@
+{
+   "master_key_hash": "",
+   "files": [
+      "/home/usuario/.librewolf/bd1p2efs.default-release/cookies.sqlite"
+   ],
+   "browser": "librewolf",
+   "session_path": "/opt/SecureBrowser/data/encrypt/",
+   "verbose": false,
+   "browser_start": false,
+   "check_code": false
+}

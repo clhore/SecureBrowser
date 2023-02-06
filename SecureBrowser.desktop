@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SecureBrowser
+Version=1.0
+Terminal=false
+Icon=/opt/SecureBrowser/data/img/icon.png
+Exec=python3 /opt/SecureBrowser/SecureBrowser.py
+Path=/opt/SecureBrowser/
+Type=Application
