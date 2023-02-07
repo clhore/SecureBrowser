@@ -19,7 +19,7 @@ def process_secure_browser_status(browser_object: object, pid: int):
 def main(password):
     SecureBrowser = browser.Browser()
     if not process_secure_browser_status(SecureBrowser, SecureBrowser.read_browser_pid()):
-        time.sleep(1)# encrypt_windows.EncryptWindows('data/config.json').copy_files()
+        #time.sleep(1)# encrypt_windows.EncryptWindows('data/config.json').copy_files()
         crypto.encrypt_file(files=JSON.JSON('/opt/SecureBrowser/data/config.json').read()['files'], string_password=password)
         encrypt_windows.EncryptWindows('/opt/SecureBrowser/data/config.json').copy_files()
         config_file = JSON.JSON('/opt/SecureBrowser/data/config.json')
