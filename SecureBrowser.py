@@ -57,22 +57,13 @@ def start_secure_browser():
     thread_browser.join()
 
 
-def start_monitor_browser_status(encrypt_password):
-    # Check status secure_browser
-    # thread_check = threading.Thread(target=process_browser_status(secure_browser))
-    # thread_check.start()
-    thread_monitor = threading.Thread(target=SecureBrowserMonitor.main(encrypt_password))
-    thread_monitor.start()
-    thread_monitor.join()
-
-
 def main():
     if len(sys.argv) > 1: flag_check(sys.argv[1]); sys.exit(0)
-    if JSON.JSON(file='/opt/SecureBrowser/data/config.json').read()['check_code']:
-        encrypt_password = start_decrypt_secure_browser()
-        start_secure_browser()
-        start_monitor_browser_status(encrypt_password=encrypt_password)
-
+    if not JSON.JSON(file='/opt/SecureBrowser/data/config.json').read()['check_code']: sys.exit(1)    
+    encrypt_password = start_decrypt_secure_browser()
+    start_secure_browser()
+    SecureBrowserMonitor.main(encrypt_password)
+    
 
 if __name__ == '__main__':
     # Linux's system check
